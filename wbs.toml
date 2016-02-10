@@ -9,3 +9,5 @@ build_target_dir = "bin"
 build_target_name = "golangpgx"
 build_command = "go"
 build_options = ["build", "-v"]
+
+restart_process = false
