@@ -11,8 +11,8 @@ func main() {
 
 	pgxConfig := pgx.ConnConfig{
 		Host:     "localhost",
-		Database: "pgtest",
-		User:     "pgtest",
+		Database: "quetest",
+		User:     "quetest",
 	}
 	pgxConnPoolConfig := pgx.ConnPoolConfig{pgxConfig, 3, nil}
 	conn, err := pgx.NewConnPool(pgxConnPoolConfig)
@@ -21,7 +21,7 @@ func main() {
 	}
 
 	var n int32
-	err = conn.QueryRow("select id from payment limit 1").Scan(&n)
+	err = conn.QueryRow("select id from item limit 1").Scan(&n)
 	if err != nil {
 		log.Fatal(err)
 	}
